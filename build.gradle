@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:6.2.1-SNAPSHOT"
+    }
+}
+
+ext {
+    version = '1.0-SNAPSHOT'
+    grailsVersion = '6.2.1-SNAPSHOT'
+    groovyVersion = '3.0.21'
+    gormVersion = '7.3.3'
+}
+apply plugin:"org.grails.grails-plugin"
+
+group "issue13486"
+
+repositories {
+    mavenLocal()
+    maven { url "https://repo.grails.org/grails/core" }
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-autoconfigure"
+    implementation "org.grails:grails-logging"
+    implementation "org.grails:grails-plugin-url-mappings"
+}
